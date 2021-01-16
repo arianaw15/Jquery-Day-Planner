@@ -29,69 +29,83 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-      <div class="row">
-        <div class="col-sm-2 time-block hour">
-          
-        </div>
+      <div class="row" id="row1">
+        <div class="col-sm-2 time-block hour" id="div1">9:00</div>
         <div class="col-sm-8">
-          <textarea type="text" id="hour-input"></textarea>
+          <textarea class= "text1" type="text"></textarea>
         </div>
-        <div class="col-sm-2 saveBtn" >
-          <i class="fa fa-lock" aria-hidden="true"></i>
+        <div class="col-sm-2">
+          <button class= "saveBtn">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+          </button>
         </div>
       </div>
+      <div class="row" id="row1">
+        <div class="col-sm-2 time-block hour" id="div1">9:00</div>
+        <div class="col-sm-8">
+          <textarea class= "text1" type="text"></textarea>
+        </div>
+        <div class="col-sm-2">
+          <button class= "saveBtn">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- <div class="row" id="row2"></div>
+      <div class="row" id="row3"></div>
+      <div class="row" id="row4"></div>
+      <div class="row" id="row5"></div>
+      <div class="row" id="row6"></div>
+      <div class="row" id="row7"></div>
+      <div class="row" id="row8"></div>
+      <div class="row" id="row9"></div> -->
       <!-- Timeblocks go here -->
     </div>
-    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    
+
     <script>
-      d = new Date();
-function weekDay(){
-      switch(d.getDay()) {
-    case 0: 
-        return 'Sunday';
-        break;
-    case 1:
-    return 'Monday';
-        break;
-    case 2:
-    return 'Tuesday';
-        break;
-    case 3:
-    return 'Wednesday';
-        break;
-    case 4:
-    return 'Thursday';
-        break;
-    case 5:
-    return 'Friday';
-        break;
-    case 6:
-    return 'Saturday';
-        break;
-}
-};
-var dayOfWeek = $("#currentDay").text(weekDay);
-var hourOfDay = d.getHours();
-// var timeArray= ["9:00", "10:00", "11:00", "12:00","1:00", "2:00", "3:00", "4:00", "5:00"];
-// for (let index = 0; index < timeArray.length; index++) {
-//   var newRow = $(".row")
-//     newRow.addClass("new-row")
-//   newRow.text(timeArray[index]);
-//   $(".row").append(newRow)  
-// }
-var newRow= $("<div>");
-  var rowElements = $(".row")
-$(".row").append(rowElements)
+        d = new Date();
+        function weekDay() {
+          switch (d.getDay()) {
+            case 0:
+              return "Sunday";
+              break;
+            case 1:
+              return "Monday";
+              break;
+            case 2:
+              return "Tuesday";
+              break;
+            case 3:
+              return "Wednesday";
+              break;
+            case 4:
+              return "Thursday";
+              break;
+            case 5:
+              return "Friday";
+              break;
+            case 6:
+              return "Saturday";
+              break;
+          }
+     }
+     var text = $(".text1").val();
 
+      $(".saveBtn").click(function() {
+        storeText();
+      });
 
-  
-  
-
+      function storeText(){
+        var text = $(".text1").val();
+        // var textInput = $(this).text;
+        alert(text);
+        localStorage.setItem("Planner1", text);
+      }
     </script>
-    <!-- <script src="luxon.js"></script> -->
+    <script src="index.java"></script>
   </body>
 </html>
