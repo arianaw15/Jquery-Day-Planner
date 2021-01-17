@@ -9,7 +9,7 @@ This page includes jquery functions that allow users to click buttons to save th
 # Images
 
 Planner View
-![Planner page with save buttons and work hours. Colors are all grey because they have all passed for the day](schedule-img.PNG)
+![Planner page with save buttons and work hours. Colors are all grey because they have all passed for the day](Assets\schedule-img.PNG)
 
 # Links
 
