@@ -230,9 +230,9 @@
           if (timeArray[index] == d.getHours()) {
             textCol.addClass("present");
           } else if (timeArray[index] > d.getHours()) {
-            textCol.addClass("past");
-          } else {
             textCol.addClass("future");
+          } else {
+            textCol.addClass("past");
           }
         }
       }
