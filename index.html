@@ -30,7 +30,7 @@
     </header>
     <div class="container">
       <div class="row" id="row1">
-        <div class="col-sm-2 time-block hour" id="div1">9</div>
+        <div class="col-sm-2 time-block hour" id="div1"></div>
         <div class="col-sm-8">
           <textarea class="text1" type="text"></textarea>
         </div>
@@ -41,7 +41,7 @@
         </div>
       </div>
       <div class="row" id="row2">
-        <div class="col-sm-2 time-block hour" id="div2">10</div>
+        <div class="col-sm-2 time-block hour" id="div2"></div>
         <div class="col-sm-8">
           <textarea class="text2" type="text"></textarea>
         </div>
@@ -52,7 +52,7 @@
         </div>
       </div>
       <div class="row" id="row3">
-        <div class="col-sm-2 time-block hour" id="div2">11</div>
+        <div class="col-sm-2 time-block hour" id="div3"></div>
         <div class="col-sm-8">
           <textarea class="text3" type="text"></textarea>
         </div>
@@ -63,7 +63,7 @@
         </div>
       </div>
       <div class="row" id="row4">
-        <div class="col-sm-2 time-block hour" id="div4">12</div>
+        <div class="col-sm-2 time-block hour" id="div4"></div>
         <div class="col-sm-8">
           <textarea class="text4" type="text"></textarea>
         </div>
@@ -74,7 +74,7 @@
         </div>
       </div>
       <div class="row" id="row5">
-        <div class="col-sm-2 time-block hour" id="div5">1</div>
+        <div class="col-sm-2 time-block hour" id="div5"></div>
         <div class="col-sm-8">
           <textarea class="text5" type="text"></textarea>
         </div>
@@ -85,7 +85,7 @@
         </div>
       </div>
       <div class="row" id="row6">
-        <div class="col-sm-2 time-block hour" id="div6">2</div>
+        <div class="col-sm-2 time-block hour" id="div6"></div>
         <div class="col-sm-8">
           <textarea class="text6" type="text"></textarea>
         </div>
@@ -96,7 +96,7 @@
         </div>
       </div>
       <div class="row" id="row7">
-        <div class="col-sm-2 time-block hour" id="div7">3</div>
+        <div class="col-sm-2 time-block hour" id="div7"></div>
         <div class="col-sm-8">
           <textarea class="text7" type="text"></textarea>
         </div>
@@ -107,7 +107,7 @@
         </div>
       </div>
       <div class="row" id="row8">
-        <div class="col-sm-2 time-block hour" id="div8">4</div>
+        <div class="col-sm-2 time-block hour" id="div8"></div>
         <div class="col-sm-8">
           <textarea class="text8" type="text"></textarea>
         </div>
@@ -118,7 +118,7 @@
         </div>
       </div>
       <div class="row" id="row9">
-        <div class="col-sm-2 time-block hour" id="div9">5</div>
+        <div class="col-sm-2 time-block hour" id="div9"></div>
         <div class="col-sm-8">
           <textarea class="text9" type="text"></textarea>
         </div>
@@ -184,8 +184,6 @@
       }
       getStore();
 
-      var hourBlock = $(".col-sm-2 time-block hour");
-
       $(".saveBtn").click(function () {
         $(this);
         storeText();
@@ -212,15 +210,34 @@
         localStorage.setItem("Planner9", text9);
       }
 
-      function timeColor() {
-        if (inum === d.getHours()) {
-          $(".row").addClass(".present");
-          // } else if (hourBlock > d.getHours()) {
-          //   $(".row").addClass(".past");
-        } else {
-          $(".row").addClass(".future");
-        }
+      var timeArray = [9,10,11,12,1,2,3,4,5]
+
+     function newRowText(){
+        var div1 = $("#div1").text(timeArray[0]);
+        var div2 = $("#div2").text(timeArray[1]);
+        var div3 = $("#div3").text(timeArray[2]);
+        var div4 = $("#div4").text(timeArray[3]);
+        var div5 = $("#div5").text(timeArray[4]);
+        var div6 = $("#div6").text(timeArray[5]);
+        var div7 = $("#div7").text(timeArray[6]);
+        var div8 = $("#div8").text(timeArray[7]);
+        var div9 = $("#div9").text(timeArray[8]);
       }
+      newRowText();
+
+      function rowColor(){
+          if (timeArray === d.getHours()){
+            $(".row").addClass(".present")
+          }
+          else if (timeArray > d.getHours()){
+            $(".row").addClass(".past")
+          }
+          else {
+            $(".row").addClass(".future")
+          }
+      }
+rowColor();
+
     </script>
   </body>
 </html>
