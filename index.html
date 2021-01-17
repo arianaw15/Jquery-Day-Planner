@@ -128,7 +128,6 @@
           </button>
         </div>
       </div>
-
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -210,34 +209,35 @@
         localStorage.setItem("Planner9", text9);
       }
 
-      var timeArray = [9,10,11,12,1,2,3,4,5]
+      var timeArray = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
-     function newRowText(){
-        var div1 = $("#div1").text(timeArray[0]);
-        var div2 = $("#div2").text(timeArray[1]);
-        var div3 = $("#div3").text(timeArray[2]);
-        var div4 = $("#div4").text(timeArray[3]);
-        var div5 = $("#div5").text(timeArray[4]);
-        var div6 = $("#div6").text(timeArray[5]);
-        var div7 = $("#div7").text(timeArray[6]);
-        var div8 = $("#div8").text(timeArray[7]);
-        var div9 = $("#div9").text(timeArray[8]);
+      function newRowText() {
+        var div1 = $("#div1").text(timeArray[0] + ":00");
+        var div2 = $("#div2").text(timeArray[1] + ":00");
+        var div3 = $("#div3").text(timeArray[2] + ":00");
+        var div4 = $("#div4").text(timeArray[3] + ":00");
+        var div5 = $("#div5").text(timeArray[4] + ":00");
+        var div6 = $("#div6").text(timeArray[5] + ":00");
+        var div7 = $("#div7").text(timeArray[6] + ":00");
+        var div8 = $("#div8").text(timeArray[7] + ":00");
+        var div9 = $("#div9").text(timeArray[8] + ":00");
       }
       newRowText();
 
-      function rowColor(){
-          if (timeArray === d.getHours()){
-            $(".row").addClass(".present")
+      function rowColor() {
+        for (let index = 0; index < timeArray.length; index++) {
+          var textCol = $(".col-sm-8");
+          if (timeArray[index] == d.getHours()) {
+            textCol.addClass("present");
+          } else if (timeArray[index] > d.getHours()) {
+            textCol.addClass("past");
+          } else {
+            textCol.addClass("future");
           }
-          else if (timeArray > d.getHours()){
-            $(".row").addClass(".past")
-          }
-          else {
-            $(".row").addClass(".future")
-          }
+        }
       }
-rowColor();
 
+      rowColor();
     </script>
   </body>
 </html>
