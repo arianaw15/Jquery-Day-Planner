@@ -30,23 +30,100 @@
     </header>
     <div class="container">
       <div class="row" id="row1">
-        <div class="col-sm-2 time-block hour" id="div1">9:00</div>
+        <div class="col-sm-2 time-block hour" id="div1">9</div>
         <div class="col-sm-8">
-          <textarea class= "text1" type="text"></textarea>
+          <textarea class="text1" type="text"></textarea>
         </div>
         <div class="col-sm-2">
-          <button class= "saveBtn">
+          <button class="saveBtn">
             <i class="fa fa-lock" aria-hidden="true"></i>
           </button>
         </div>
       </div>
-      <div class="row" id="row1">
-        <div class="col-sm-2 time-block hour" id="div1">9:00</div>
+      <div class="row" id="row2">
+        <div class="col-sm-2 time-block hour" id="div2">10</div>
         <div class="col-sm-8">
-          <textarea class= "text1" type="text"></textarea>
+          <textarea class="text2" type="text"></textarea>
         </div>
         <div class="col-sm-2">
-          <button class= "saveBtn">
+          <button class="saveBtn">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      <div class="row" id="row3">
+        <div class="col-sm-2 time-block hour" id="div2">11</div>
+        <div class="col-sm-8">
+          <textarea class="text3" type="text"></textarea>
+        </div>
+        <div class="col-sm-2">
+          <button class="saveBtn">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      <div class="row" id="row4">
+        <div class="col-sm-2 time-block hour" id="div4">12</div>
+        <div class="col-sm-8">
+          <textarea class="text4" type="text"></textarea>
+        </div>
+        <div class="col-sm-2">
+          <button class="saveBtn">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      <div class="row" id="row5">
+        <div class="col-sm-2 time-block hour" id="div5">1</div>
+        <div class="col-sm-8">
+          <textarea class="text5" type="text"></textarea>
+        </div>
+        <div class="col-sm-2">
+          <button class="saveBtn">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      <div class="row" id="row6">
+        <div class="col-sm-2 time-block hour" id="div6">2</div>
+        <div class="col-sm-8">
+          <textarea class="text6" type="text"></textarea>
+        </div>
+        <div class="col-sm-2">
+          <button class="saveBtn">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      <div class="row" id="row7">
+        <div class="col-sm-2 time-block hour" id="div7">3</div>
+        <div class="col-sm-8">
+          <textarea class="text7" type="text"></textarea>
+        </div>
+        <div class="col-sm-2">
+          <button class="saveBtn">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      <div class="row" id="row8">
+        <div class="col-sm-2 time-block hour" id="div8">4</div>
+        <div class="col-sm-8">
+          <textarea class="text8" type="text"></textarea>
+        </div>
+        <div class="col-sm-2">
+          <button class="saveBtn">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      <div class="row" id="row9">
+        <div class="col-sm-2 time-block hour" id="div9">5</div>
+        <div class="col-sm-8">
+          <textarea class="text9" type="text"></textarea>
+        </div>
+        <div class="col-sm-2">
+          <button class="saveBtn">
             <i class="fa fa-lock" aria-hidden="true"></i>
           </button>
         </div>
@@ -67,45 +144,105 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
     <script>
-        d = new Date();
-        function weekDay() {
-          switch (d.getDay()) {
-            case 0:
-              return "Sunday";
-              break;
-            case 1:
-              return "Monday";
-              break;
-            case 2:
-              return "Tuesday";
-              break;
-            case 3:
-              return "Wednesday";
-              break;
-            case 4:
-              return "Thursday";
-              break;
-            case 5:
-              return "Friday";
-              break;
-            case 6:
-              return "Saturday";
-              break;
-          }
-     }
-     var text = $(".text1").val();
+      d = new Date();
+      function weekDay() {
+        switch (d.getDay()) {
+          case 0:
+            return "Sunday";
+            break;
+          case 1:
+            return "Monday";
+            break;
+          case 2:
+            return "Tuesday";
+            break;
+          case 3:
+            return "Wednesday";
+            break;
+          case 4:
+            return "Thursday";
+            break;
+          case 5:
+            return "Friday";
+            break;
+          case 6:
+            return "Saturday";
+            break;
+        }
+      }
+      var dayOfWeek = $("#currentDay").text(weekDay);
+      function getStore() {
+        var storageItem = localStorage.getItem("Planner1");
+        $(".text1").append(storageItem);
+        var storageItem2 = localStorage.getItem("Planner2");
+        $(".text2").append(storageItem2);
+        var storageItem3 = localStorage.getItem("Planner3");
+        $(".text3").append(storageItem3);
+        var storageItem4 = localStorage.getItem("Planner4");
+        $(".text4").append(storageItem4);
+        var storageItem5 = localStorage.getItem("Planner5");
+        $(".text5").append(storageItem5);
+        var storageItem6 = localStorage.getItem("Planner6");
+        $(".text6").append(storageItem6);
+        var storageItem7 = localStorage.getItem("Planner7");
+        $(".text7").append(storageItem7);
+        var storageItem8 = localStorage.getItem("Planner8");
+        $(".text8").append(storageItem8);
+        var storageItem9 = localStorage.getItem("Planner9");
+        $(".text9").append(storageItem9);
+      }
+      getStore();
 
-      $(".saveBtn").click(function() {
+      var hourBlock = $(".col-sm-2 time-block hour");
+
+      $(".saveBtn").click(function () {
+        $(this);
         storeText();
       });
 
-      function storeText(){
+      function storeText() {
         var text = $(".text1").val();
-        // var textInput = $(this).text;
-        alert(text);
         localStorage.setItem("Planner1", text);
+        var text2 = $(".text2").val();
+        localStorage.setItem("Planner2", text2);
+        var text3 = $(".text3").val();
+        localStorage.setItem("Planner3", text3);
+        var text4 = $(".text4").val();
+        localStorage.setItem("Planner4", text4);
+        var text5 = $(".text5").val();
+        localStorage.setItem("Planner5", text5);
+        var text6 = $(".text6").val();
+        localStorage.setItem("Planner6", text6);
+        var text7 = $(".text7").val();
+        localStorage.setItem("Planner7", text7);
+        var text8 = $(".text8").val();
+        localStorage.setItem("Planner8", text8);
+        var text9 = $(".text9").val();
+        localStorage.setItem("Planner9", text9);
       }
+
+      function timeColor() {
+        if (inum === d.getHours()) {
+          $(".row").addClass(".present");
+        // } else if (hourBlock > d.getHours()) {
+        //   $(".row").addClass(".past");
+        } else {
+          $(".row").addClass(".future");
+        }
+      }
+      
+      // function newRow(){
+      //   var newDiv = $("<div>")
+      //   var container = $(".container");
+      //   newDiv.append(container);
+      // }
+
+      // var timeArray = [9,10,11,12,1,2,3,4,5]
+      // timeArray.forEach(element => {
+      //   newRow();
+      // });
+
     </script>
-    <script src="index.java"></script>
+    <!-- <script src="index.java"></script> -->
   </body>
 </html>
